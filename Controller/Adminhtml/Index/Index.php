@@ -67,7 +67,6 @@ class Index extends \Magento\Backend\App\Action
             $updatedItems = 0;
             foreach ($collection as $item) {
                 try {
-
                     $customer = $this->customerRepositoryInterface->getById($item->getId());
                     $customer->setCustomAttribute('account_approved', $approve);
                     $this->customerRepositoryInterface->save($customer);
