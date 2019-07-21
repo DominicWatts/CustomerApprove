@@ -3,7 +3,7 @@
     "description": "Magento 2 Customer approved attribute.  If set to no will not allow login into site. Admin column with inline edit and mass action.",
     "type": "magento2-module",
     "license": "proprietary",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Dominic Xigen",
