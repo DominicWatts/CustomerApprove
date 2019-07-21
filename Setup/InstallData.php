@@ -48,7 +48,7 @@ class InstallData implements InstallDataInterface
                 'label' => 'Account Approved',
                 'input' => 'boolean',
                 'source' => '',
-                'required' => true,
+                'required' => false,
                 'default' => 0,
                 'visible' => true,
                 'position' => 50,
