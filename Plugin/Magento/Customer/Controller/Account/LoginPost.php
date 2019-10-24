@@ -5,6 +5,8 @@ namespace Xigen\CustomerApprove\Plugin\Magento\Customer\Controller\Account;
 use Magento\Framework\App\Action\Context;
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Framework\Message\ManagerInterface;
+use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Exception\LocalizedException;
 
 /**
  * Class LoginPost
@@ -89,7 +91,7 @@ class LoginPost
                             return $proceed();
                         } else {
                             $this->messageManager->addErrorMessage(__('Your account is not approved.'));
-                            $resultRedirect = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_REDIRECT);
+                            $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
                             return $resultRedirect->setPath('customer/account/login');
                         }
                     } else {
@@ -97,7 +99,7 @@ class LoginPost
                     }
                 }
             }
-            throw new \Exception(__("Problem with login"));
+            throw new LocalizedException(__("Problem with login"));
         } catch (\Exception $e) {
             $this->messageManager->addErrorMessage(
                 __('An unspecified error occurred . Please contact us for assistance . ')
